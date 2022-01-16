@@ -1,5 +1,9 @@
 from datetime import date
 import openpyxl
+import os
+
+# User desktop location:
+desktop = os.path.join(os.environ["HOMEPATH"], "Desktop")
 
 wb = openpyxl.Workbook()
 ws = wb.active
@@ -47,4 +51,4 @@ s2.smooth = True  # Make the line smooth
 
 
 ws.add_chart(c1, 'A10')
-wb.save("line.xlsx")
+wb.save(f"{desktop}/line.xlsx")
